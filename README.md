@@ -95,7 +95,7 @@ Features:
 ---
 
 
-## ***▸▸ [Schrödinger Recursion*](https://github.com/FabioFGBuono/Schrodinger-Recursion): Another Educational case study in rigorous Python engineering***
+## ***▸▸ [Schrödinger Recursion](https://github.com/FabioFGBuono/Schrodinger-Recursion): Another Educational case study in rigorous Python engineering***
 
 A compact, educational Lisp interpreter in Python that demonstrates the **Schrödinger Recursion** pattern... a simple S‑expression parser, symbolic/list representations (`Recipe`, `Platter`), a lexical environment (`Kitchen`), and a trampoline-based mechanism for handling thunks and recursion. Includes built‑in functions, examples and tests (definitions, lambdas, recursion, lists, arithmetic), plus design notes explaining key choices and trade‑offs. Use this repository as a hands‑on tool to explore **closures**, **thunking**, **trampolining**, and interpreter design decisions—ideal for teaching or experimentation.
 
