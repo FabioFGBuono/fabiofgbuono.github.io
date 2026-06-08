@@ -440,24 +440,25 @@ body::after{
   will-change: transform, filter;
 }*/
 
-    /* Badge evidenziato: stato "hover" permanente */
-.badges img.badge-featured {
+/* Badge evidenziato: stato "hover" permanente (metti questa regola DOPO tutte le altre) */
+.badges img.badge-featured,
+.badges img.badge-featured:hover {
   display: inline-block;
-  transform: translateY(-6px) rotate(-4deg) scale(1.06);
-  filter: drop-shadow(0 12px 24px rgba(110,179,255,0.12));
+  transform: translateY(-6px) rotate(-4deg) scale(1.06) !important;
+  filter: drop-shadow(0 12px 24px rgba(110,179,255,0.12)) !important;
   transition: transform 0.28s cubic-bezier(.2,.9,.3,1), filter 0.28s;
   transform-origin: center;
   will-change: transform, filter;
   z-index: 2;
 }
 
-/* Mantieni comportamento hover coerente se l'utente passa il cursore sul badge evidenziato */
+/* Stato hover più pronunciato quando l'utente passa il mouse */
 .badges img.badge-featured:hover {
-  transform: translateY(-8px) rotate(-5deg) scale(1.08);
-  filter: drop-shadow(0 16px 32px rgba(110,179,255,0.16));
+  transform: translateY(-8px) rotate(-5deg) scale(1.08) !important;
+  filter: drop-shadow(0 16px 32px rgba(110,179,255,0.16)) !important;
 }
 
-/* Accessibilità: stato focus per utenti da tastiera */
+/* Focus per accessibilità (tastiera) */
 .badges img.badge-featured:focus-visible {
   outline: 3px solid rgba(110,179,255,0.18);
   outline-offset: 4px;
