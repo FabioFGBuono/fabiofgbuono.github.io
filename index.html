@@ -464,27 +464,6 @@ body::after{
   outline-offset: 4px;
 }
 
-    /* Disabilita gli effetti :hover sui dispositivi touch */
-@media (hover: none) and (pointer: coarse) {
-  .badges img:hover,
-  .badges img:active,
-  .badges img:focus {
-    transform: none !important;
-    filter: none !important;
-  }
-
-  /* Se vuoi che solo il badge-featured resti inclinato, mantienilo esplicito */
-  .badges img.badge-featured {
-    transform: translateY(-6px) rotate(-4deg) scale(1.06);
-    filter: drop-shadow(0 12px 24px rgba(110,179,255,0.12));
-  }
-}
-/* Se il body ha is-touching, annulla gli hover */
-body.is-touching .badges img:hover {
-  transform: none !important;
-  filter: none !important;
-}
-
 
   </style>
 </head>
