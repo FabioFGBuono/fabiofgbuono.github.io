@@ -651,6 +651,18 @@ body::after{
   <p><em>If you see something missing, build it.</em></p>
   <p><em>And if I don't reply... I'm probably busy breaking something else.</em></p>
 
+  <script>
+  // Rimuove il focus dall'elemento toccato per evitare che rimanga "attivo"
+  document.addEventListener('touchend', function(e) {
+    if (e.target && typeof e.target.blur === 'function') {
+      e.target.blur();
+    }
+  }, {passive: true});
+
+  // Blocaa l'evidenziazione nativa su iOS/Android
+  document.addEventListener('touchstart', function() {}, {passive: true});
+</script>
+
 </body>
 </html>
   
