@@ -672,56 +672,6 @@ body.is-touching .badges img:hover {
   <p><em>If you see something missing, build it.</em></p>
   <p><em>And if I don't reply... I'm probably busy breaking something else.</em></p>
 
-<script>
-  // Evita che il browser mantenga lo stato "hover" dopo il tocco
-  (function() {
-    let touchTimer = null;
-
-    function onTouchStart(e) {
-      // segnala che è in corso un touch
-      document.body.classList.add('is-touching');
-
-      // se il target è un badge, rimuovi il focus da altri elementi
-      const t = e.target;
-      if (t && t.matches && t.matches('.badges img')) {
-        // rimuove il focus attivo (se presente)
-        if (document.activeElement && typeof document.activeElement.blur === 'function') {
-          document.activeElement.blur();
-        }
-      }
-
-      // pulizia timer precedente
-      if (touchTimer) clearTimeout(touchTimer);
-    }
-
-    function onTouchEnd(e) {
-      const t = e.target;
-      if (t && t.matches && t.matches('.badges img') && typeof t.blur === 'function') {
-        t.blur();
-      }
-      if (document.activeElement && typeof document.activeElement.blur === 'function') {
-        document.activeElement.blur();
-      }
-
-      touchTimer = setTimeout(function() {
-        document.body.classList.remove('is-touching');
-      }, 50);
-    }
-
-    document.addEventListener('touchstart', onTouchStart, {passive: true});
-    document.addEventListener('touchend', onTouchEnd, {passive: true});
-    document.addEventListener('click', function(e){
-      if (e.target && e.target.matches && e.target.matches('.badges img')) {
-        // rimuovi focus subito
-        if (document.activeElement && typeof document.activeElement.blur === 'function') {
-          document.activeElement.blur();
-        }
-      }
-    }, true);
-  })();
-</script>
-
-
 </body>
 </html>
   
