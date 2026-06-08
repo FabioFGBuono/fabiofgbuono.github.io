@@ -429,6 +429,40 @@ body::after{
   transform: translateZ(0);
 }
 
+/* Primo badge sempre nello stato "hover" */
+/*.badges > img:first-child,
+.badges img:first-of-type {
+  display: inline-block;
+  transform: translateY(-6px) rotate(-4deg) scale(1.06);
+  filter: drop-shadow(0 12px 24px rgba(110,179,255,0.12));
+  transition: transform 0.28s cubic-bezier(.2,.9,.3,1), filter 0.28s;
+  transform-origin: center;
+  will-change: transform, filter;
+}*/
+
+    /* Badge evidenziato: stato "hover" permanente */
+.badges img.badge-featured {
+  display: inline-block;
+  transform: translateY(-6px) rotate(-4deg) scale(1.06);
+  filter: drop-shadow(0 12px 24px rgba(110,179,255,0.12));
+  transition: transform 0.28s cubic-bezier(.2,.9,.3,1), filter 0.28s;
+  transform-origin: center;
+  will-change: transform, filter;
+  z-index: 2;
+}
+
+/* Mantieni comportamento hover coerente se l'utente passa il cursore sul badge evidenziato */
+.badges img.badge-featured:hover {
+  transform: translateY(-8px) rotate(-5deg) scale(1.08);
+  filter: drop-shadow(0 16px 32px rgba(110,179,255,0.16));
+}
+
+/* Accessibilità: stato focus per utenti da tastiera */
+.badges img.badge-featured:focus-visible {
+  outline: 3px solid rgba(110,179,255,0.18);
+  outline-offset: 4px;
+}
+
 
   </style>
 </head>
@@ -442,7 +476,7 @@ body::after{
   <h1><center><strong>Computer science is no more about computers than astronomy is about telescopes.</strong><em>Edsger W. Dijkstra</em></center></h1>
 
   <div class="badges" aria-hidden="true">
-    <img src="https://img.shields.io/badge/Status-Experimenting-orange" alt="Status">
+    <img src="https://img.shields.io/badge/Status-Experimenting-orange" alt="Status" class="badge-featured">
     <img src="https://img.shields.io/badge/Focus-Learning-blue" alt="Focus">
     <img src="https://img.shields.io/badge/Fueled%20by-Coffee-brown" alt="Coffee">
     <img src="https://img.shields.io/badge/Entropy-Increasing-black" alt="Entropy">
