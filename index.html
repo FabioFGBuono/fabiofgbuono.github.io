@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FabioFGBuono</title>
+  <style>
+    :root{
+      --bg:#0a0e27;
+      --bg-secondary:#111d3d;
+      --fg:#f0f4ff;
+      --fg-secondary:#b8c5d6;
+      --muted:#7a8fa3;
+      --accent:#6eb3ff;
+      --accent-dark:#4a9eff;
+      --border:#1e2d47;
+      --success:#4ade80;
+      --warning:#fbbf24;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body{
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--fg);
+      background: linear-gradient(135deg, var(--bg) 0%, #0f1835 100%);
+      padding: 48px 32px;
+      max-width: 900px;
+      margin: 0 auto;
+      min-height: 100vh;
+    }
+    
+    h1{
+      font-size: 2.4rem;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, var(--fg) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    
+    h1 em {
+      display: block;
+      font-size: 1.1rem;
+      margin-top: 12px;
+      font-style: italic;
+      background: none;
+      -webkit-text-fill-color: var(--muted);
+      color: var(--muted);
+      font-weight: 400;
+    }
+    
+    h2{
+      font-size: 1.6rem;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+    
+    h3{
+      font-size: 1.3rem;
+      margin: 28px 0 12px;
+      color: var(--fg);
+      font-weight: 700;
+    }
+    
+    p {
+      margin-bottom: 16px;
+      color: var(--fg-secondary);
+      font-size: 1.05rem;
+    }
+    
+    ul, ol {
+      margin: 16px 0 16px 24px;
+    }
+    
+    li {
+      margin-bottom: 10px;
+      color: var(--fg-secondary);
+    }
+    
+    blockquote{
+      font-style: italic;
+      color: var(--muted);
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      background: rgba(110, 179, 255, 0.08);
+      border-radius: 4px;
+      margin: 20px 0;
+      backdrop-filter: blur(10px);
+    }
+    
+    hr{
+      border: 0;
+      border-top: 2px solid var(--border);
+      margin: 40px 0;
+      opacity: 0.6;
+    }
+    
+    table{
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--bg-secondary);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    thead {
+      background: linear-gradient(90deg, rgba(110, 179, 255, 0.15) 0%, rgba(110, 179, 255, 0.05) 100%);
+    }
+    
+    th {
+      padding: 16px 12px;
+      color: var(--accent);
+      font-weight: 700;
+      text-align: left;
+      border-bottom: 2px solid var(--border);
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    
+    td {
+      padding: 14px 12px;
+      border-bottom: 1px solid var(--border);
+      color: var(--fg-secondary);
+      font-size: 0.95rem;
+    }
+    
+    tbody tr:hover {
+      background: rgba(110, 179, 255, 0.1);
+      transition: background 0.2s ease;
+    }
+    
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+    
+    .badges img {
+      height: 24px;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+      transition: transform 0.2s ease;
+    }
+    
+    .badges img:hover {
+      transform: translateY(-2px);
+    }
+    
+    .lead {
+      color: var(--muted);
+      margin-top: 12px;
+      font-size: 1.05rem;
+      padding: 16px 20px;
+      background: rgba(110, 179, 255, 0.05);
+      border-radius: 6px;
+      border-left: 3px solid var(--accent-dark);
+    }
+    
+    pre {
+      background: #0f1720;
+      color: #e6eef8;
+      padding: 16px;
+      border-radius: 8px;
+      overflow: auto;
+      font-size: 0.9rem;
+      margin: 16px 0;
+      border: 1px solid var(--border);
+      line-height: 1.5;
+    }
+    
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    a:hover {
+      color: var(--fg);
+    }
+    
+    a.repo {
+      font-weight: 700;
+      position: relative;
+    }
+    
+    a.repo::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+    
+    a.repo:hover::after {
+      width: 100%;
+    }
+    
+    .note {
+      font-style: italic;
+      color: var(--muted);
+    }
+    
+    footer {
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      padding-top: 20px;
+      border-top: 2px solid var(--border);
+    }
+    
+    .columns {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+    
+    .col {
+      flex: 1 1 220px;
+      min-width: 220px;
+      padding: 20px;
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+    
+    .col:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(110, 179, 255, 0.15);
+    }
+    
+    .quote-title {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    
+    strong {
+      color: var(--fg);
+      font-weight: 700;
+    }
+    
+    em {
+      color: var(--fg-secondary);
+      font-style: italic;
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding: 32px 16px;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      h2 {
+        font-size: 1.4rem;
+      }
+      
+      table {
+        font-size: 0.9rem;
+      }
+      
+      td, th {
+        padding: 10px 8px;
+      }
+    }
+    .badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  justify-content: center;
+}
+h2 {
+  font-size: 1.8rem;
+  margin-top: 32px;
+  margin-bottom: 16px;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  text-shadow: 
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000,
+    -3px 0 0 #000,
+    3px 0 0 #000,
+    0 -3px 0 #000,
+    0 3px 0 #000,
+    -3px -2px 4px #000,
+    3px -2px 4px #000,
+    -2px 2px 4px #000,
+    2px 2px 4px #000;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  border-radius: 9px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  box-shadow: 9px 22px 22px 22px rgba(0, 0, 0, 0.3);
+  border: 3px solid var(--accent);
+}
+/* Immagini tonde riutilizzabili */
+.avatar-round {
+  display: block;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255,255,255,0.06);
+  box-shadow: 0 8px 24px rgba(10,14,39,0.6), 0 2px 6px rgba(110,179,255,0.08);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+}
+
+/* Variante hero */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+.hero-avatar {
+  width: 300px;
+  height: 300px;
+  border: 5px solid rgba(110,179,255,0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.hero-avatar:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(16,24,48,0.6);
+}
+
+/* Variante piccola per badges */
+.small-avatar {
+  width: 56px;
+  height: 56px;
+  border: 3px solid rgba(255,255,255,0.04);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .hero-avatar {
+    width: 140px;
+    height: 140px;
+  }
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg,
+      rgba(110,179,255,0.20) 0%,
+      rgba(110,179,255,0.10) 25%,
+      rgba(10,14,39,0.65) 70%,
+      rgba(10,14,39,0.85) 100%);
+  mix-blend-mode: multiply;
+  filter: blur(14px) contrast(1.02);
+  opacity: 0.98;
+}
+body > * { position: relative; z-index: 1; }
+
+.diag-accent::before{
+  content: "";
+  position: fixed;
+  inset: -20% -40% -20% -40%;
+  transform: rotate(-12deg);
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+    rgba(110,179,255,0.22),
+    rgba(110,179,255,0.08) 40%,
+    rgba(10,14,39,0.65) 100%);
+  filter: blur(18px);
+  mix-blend-mode: overlay;
+  opacity: 0.98;
+}
+body { position: relative; }
+.badges img {
+  transition: transform 0.28s cubic-bezier(.2,.9,.3,1), filter 0.28s;
+  transform-origin: center;
+}
+.badges img:hover {
+  transform: translateY(-6px) rotate(-4deg) scale(1.06);
+  filter: drop-shadow(0 12px 24px rgba(110,179,255,0.12));
+}
+body::after{
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: linear-gradient(transparent 50%, rgba(255,255,255,0.01) 50%);
+  background-size: 100% 6px;
+  mix-blend-mode: soft-light;
+  opacity: 0.6;
+  transform: translateZ(0);
+}
+
+
+  </style>
+</head>
+<body class="diag-accent">
+  
+  <div class="hero">
+    <img src="LogoFB.png" alt="Foto di Fabio" class="avatar-round hero-avatar" loading="lazy" width="220" height="220">
+  </div>
+  
+
+  <h1><center><strong>Computer science is no more about computers than astronomy is about telescopes.</strong><em>Edsger W. Dijkstra</em></center></h1>
+
+  <div class="badges" aria-hidden="true">
+    <img src="https://img.shields.io/badge/Status-Experimenting-orange" alt="Status">
+    <img src="https://img.shields.io/badge/Focus-Learning-blue" alt="Focus">
+    <img src="https://img.shields.io/badge/Fueled%20by-Coffee-brown" alt="Coffee">
+    <img src="https://img.shields.io/badge/Entropy-Increasing-black" alt="Entropy">
+  </div>
+
+  <p class="lead"><em>All the work presented here is not intended as being in development, it is an idea shared with the public unless explicitly stated otherwise. All repositories should be understood as conceptual showcases...</em></p>
+
+  <p><center><strong>Despite all this, EVERYTHING works and everything is written at the state of the art of technology, at least as far as I know (I hope) :P </strong></center></p>
+
+  <hr>
+
+  <h2><u>Key repos</u></h2>
+  <div class="badges" aria-hidden="true">
+    <img src="https://img.shields.io/badge/Issues-Open_with_care-green" alt="Issues">
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Repo</th><th style="text-align:right">Tech</th><th>Status</th><th>One-line</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="repo" href="https://github.com/FabioFGBuono/Md2Arxive">Md2Arxive</a></td>
+        <td style="text-align:right">OCaml</td>
+        <td>Proof-of-concept / unmaintained</td>
+        <td>Markdown → LaTeX transpiler for arXiv submissions, formal semantics &amp; compiler pipeline.</td>
+      </tr>
+      <tr>
+        <td><a class="repo" href="https://github.com/FabioFGBuono/Docxwatermarker">Docxwatermarker</a></td>
+        <td style="text-align:right">Python</td>
+        <td>Production-tested / case study / unmaintained</td>
+        <td>Byte-preserving image replacement in .docx templates, formal specs + reproducible builds.</td>
+      </tr>
+      <tr>
+        <td><a class="repo" href="https://github.com/FabioFGBuono/Schrodinger-Recursion">Schrödinger Recursion</a></td>
+        <td style="text-align:right">Python</td>
+        <td>Production-tested / case study / maintained and unmaintained</td>
+        <td>A compact, educational Lisp interpreter in Python that demonstrates the Schrödinger Recursion pattern.</td>
+      </tr>
+
+      <tr>
+        <td><a class="repo" href="https://github.com/FabioFGBuono/errorcontext">ErrorContext</a></td>
+        <td style="text-align:right">Python</td>
+        <td>Conceptual experiment in exception‑driven observability</td>
+        <td>Python stack traces tell you where things broke, ErrorContext tells you why</td>
+      </tr>
+  
+      <tr>
+        <td><a class="repo" href="https://github.com/FabioFGBuono/Symmetries-Invariants-Music">Symmetries-Invariants-Music</a></td>
+        <td style="text-align:right">text, math and music</td>
+        <td>an idea about music theory</td>
+        <td>Whole tones, fifths, and zigzag patterns</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <h2>∑ ▸ Projects, ideas, experiments</h2>
+  <p>This is my corner on GitHub and here you will find what I build, models, notes, attempts, errors, and everything I need in order to understand better how information works, which is the topic that fascinates me the most.</p>
+  <p>Much of what is presented here can be summarized by C.A.R. Hoare's maxim: <strong>"The most important property of a program is whether it accomplishes the intention of its user"</strong></p>
+
+  <h2>∀ ▸ Areas of interest</h2>
+  <p>I move across formal languages, computability, complexity, formal semantics, parallel models of computation, and everything that has a structure rigid enough to be taken apart and put back together, and I am also interested in how information behaves when you look at it through the eyes of physics, energy, limits of computation, dynamics, systems that evolve, and another aspect that matters to me is epistemology, analytic philosophy, and the philosophy of language because it helps to understand the world and to see how formal models connect to meaning and where they stop doing so.</p>
+
+  <h2>𝄞 ▸ A personal note</h2>
+  <p>I have been playing music for as long as I can remember, I loved Walter Piston's beautiful book, and I have always thought that harmonic structures work like formal systems and if you think about it they are not that different from a language or from a model of computation. Ah... Juggling relaxes me as much as playing the guitar or unwinding with a good movie. I'm also an avid strategy game enthusiast, from Go and chess to Quarto, Othello, Connect Four, and plenty more. And I love cooking, and I've always enjoyed how often computer science borrows culinary metaphors. From classic works like Java Restaurant (Francesco Tisato, Libero Nigro, Apogeo), which explains concurrency through the workflow of a kitchen, to the global tradition of technical "Cookbooks", the parallel between recipes and algorithms always makes me smile. I also appreciate the reverse approach of books like Cooking for Programmers 0x00 (Richard Wurzer, 0x0D Press), which teach real cooking through pseudocode, flowcharts, and programming concepts, proving just how interchangeable these two worlds can be.</p>
+
+  <hr>
+
+  <h2>λ ▸ My projects here on GitHub</h2>
+  <p>I do not use public repositories very often but whatever is worth putting online is here and this is where you will find the things that I think deserve to be shared, even if they are small, partial, experimental or simply useful to me while I try to understand better what I am working on.</p>
+
+  <hr>
+
+  <h3><a class="repo" href="https://github.com/FabioFGBuono/Md2Arxive">Md2Arxive</a> - Markdown to LaTeX Transpiler</h3>
+  <p><strong>A practical bridge between compiler theory and production code.</strong></p>
+  <p>A Markdown-to-LaTeX transpiler written in OCaml, designed to transform academic writing into arXiv-ready submissions. More than a tool, it's a <strong>didactic project</strong> that demonstrates how formal semantics (denotational, axiomatic, operational) apply to real-world compilation.</p>
+  <p><strong>What makes it stand out:</strong></p>
+  <ul>
+    <li>Formal contracts (@requires, @ensures, @invariant) throughout the codebase</li>
+    <li>Hand-written DFA lexer and explicit-state parser</li>
+    <li>Global semantic validation (orphan citations, ORCID format, table consistency)</li>
+    <li>Comprehensive error recovery with non-fatal diagnostics</li>
+    <li>Three formal semantics documented in companion PDFs</li>
+  </ul>
+  <p>A small but complete compiler pipeline showing AST, lexing, parsing, semantic validation, and code generation on an understandable domain.</p>
+
+  <hr>
+
+  <h3><a class="repo" href="https://github.com/FabioFGBuono/Docxwatermarker">Docxwatermarker</a> - Educational case study in rigorous Python engineering</h3>
+  <p><strong>Replace images inside .docx templates byte-for-byte, preserving layout for per-recipient document personalization</strong> (confidentiality stamps, draft markers, watermarks for traceability).</p>
+  <p>Bridges formal methods with production code: shipped with complete axiomatic + operational semantic specifications, each translated to English and Italian. Code ↔ spec bidirectionally synchronized via annotations (test-verified).</p>
+  <p>Written in spare time as a case study in rigorous engineering with zero XML manipulation, immutable API, reproducible builds, mypy strict, design-by-contract preconditions/postconditions.</p>
+  <p><strong>Educational framework for rigorous software engineering, embedded in a practical tool.</strong></p>
+  <p><strong>Features:</strong></p>
+  <ul>
+    <li>Formal Semantics: axiomatic (Hoare triples, total correctness) + operational</li>
+    <li>Specification Cross-Reference Pattern: code ↔ spec bidirectional sync via annotations</li>
+    <li>Immutable API (MappingProxyType, factory patterns, chaining)</li>
+    <li>Reproducible byte-identical builds (DOS-min timestamps)</li>
+    <li>Marker detection via PNG tEXt metadata (zero-config)</li>
+    <li>Structured JSON-serializable errors</li>
+    <li>mypy strict + ruff + 300+ test assertions</li>
+    <li>4 formal PDFs (EN + IT): axiomatic semantics, operational semantics, study guide</li>
+    <li>Design-by-contract (require/ensure split)</li>
+    <li>Hoare logic + operational semantics + total correctness proofs</li>
+  </ul>
+
+  <hr>
+
+  <h3><a class="repo" href="https://github.com/FabioFGBuono/Schrodinger-Recursion">Another Educational case study in rigorous Python engineering</a></h3>
+  <p><em>A compact, educational Lisp interpreter in Python that demonstrates the 
+    **Schrödinger Recursion** pattern... a simple S-expression parser, symbolic/list representations 
+    (`Recipe`, `Platter`), a lexical environment (`Kitchen`), and a trampoline-based mechanism for 
+    handling thunks and recursion. Includes built-in functions, examples and tests 
+    (definitions, lambdas, recursion, lists, arithmetic), plus design notes explaining 
+    key choices and trade-offs. Use this repository as a hands-on tool to explore closures,
+     thunking, trampolining, and interpreter design decisions, ideal for teaching or 
+     experimentation.</em></p>
+
+  <hr>
+
+    <h3><a class="repo" href="https://github.com/FabioFGBuono/ErrorContext">ErrorContext</a></h3>
+  <p><em>Python stack traces tell you where things broke. errorcontext tells you why, with no external dependencies. N
+    o separate logging setup. No configuration files. The exception carries its own context. Always.</em></p>
+  <blockquote>
+    <span class="quote-title"> </span>
+    Errorcontext let the exception accumulate its own context as it unwinds. The call stack is the trail. 
+    The exception is the log entry and no coordination is required. Obviously is a conceptual experiment 
+    in exception‑driven observability, it’s fully functional, but its main purpose is to explore what 
+    happens when the exception becomes the log..</blockquote>
+
+  <hr>
+  
+  <h3><a class="repo" href="https://github.com/FabioFGBuono/Symmetries-Invariants-Music">Symmetries-Invariants-Music</a></h3>
+  <p><em>This repository explores the hidden mathematical symmetries in Western tonal 
+    music and how the circle of fifths emerges from the structure of whole tones through 
+    an original observation on the relationship between musical scales and the principles of 
+    symmetry, explained through... the 'zig-zag' (interleaving).</em></p>
+  <blockquote>
+    <span class="quote-title">Perfect for:</span>
+    Musicians curious about mathematics, mathematicians interested in music, or anyone who 
+    wants to discover elegant structures hidden within classical music theory.
+  </blockquote>
+
+  <hr>
+
+  <h2>⊘ ▸ Licenses</h2>
+  <p>Everything you find here is released under <strong>free</strong> licenses</p>
+
+  <hr>
+
+  <h2>▸ Acknowledgements for ideas</h2>
+  <p>The theoretical content, proofs, and implementation described in these files are 
+    the authors' original work. Where present, all scientific claims and conceptual 
+    contributions are solely attributable to the authors. AI-assisted tools were used only for 
+    non-creative support tasks such as bibliographic cross-checking and citation verification; 
+    advanced debugging assistance; compilation and consistency checks; language revision of 
+    non-native English prose; and rephrasing of inline code comments for clarity, without altering 
+    technical content or algorithmic intent. Some portions of the text were translated by the 
+    authors themselves, and certain English passages were intentionally left in their original, 
+    author-written form without AI revision. No AI tool contributed to the mathematical results, 
+    the algorithmic design, the ideas, or the scientific claims where present.</p>
+  <p>This statement applies to all repositories under this account, unless otherwise indicated.</p>
+
+  <hr>
+
+  <p><em>If you see something broken, open an issue.</em></p>
+  <p><em>If you see something cool, steal it.</em></p>
+  <p><em>If you see something missing, build it.</em></p>
+  <p><em>And if I don't reply... I'm probably busy breaking something else.</em></p>
+
+</body>
+</html>
+  
