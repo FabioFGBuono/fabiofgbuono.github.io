@@ -464,6 +464,27 @@ body::after{
   outline-offset: 4px;
 }
 
+    /* Disabilita gli effetti :hover sui dispositivi touch */
+@media (hover: none) and (pointer: coarse) {
+  .badges img:hover,
+  .badges img:active,
+  .badges img:focus {
+    transform: none !important;
+    filter: none !important;
+  }
+
+  /* Se vuoi che solo il badge-featured resti inclinato, mantienilo esplicito */
+  .badges img.badge-featured {
+    transform: translateY(-6px) rotate(-4deg) scale(1.06);
+    filter: drop-shadow(0 12px 24px rgba(110,179,255,0.12));
+  }
+}
+/* Se il body ha is-touching, annulla gli hover */
+body.is-touching .badges img:hover {
+  transform: none !important;
+  filter: none !important;
+}
+
 
   </style>
 </head>
@@ -651,17 +672,55 @@ body::after{
   <p><em>If you see something missing, build it.</em></p>
   <p><em>And if I don't reply... I'm probably busy breaking something else.</em></p>
 
-  <script>
-  // Rimuove il focus dall'elemento toccato per evitare che rimanga "attivo"
-  document.addEventListener('touchend', function(e) {
-    if (e.target && typeof e.target.blur === 'function') {
-      e.target.blur();
-    }
-  }, {passive: true});
+<script>
+  // Evita che il browser mantenga lo stato "hover" dopo il tocco
+  (function() {
+    let touchTimer = null;
 
-  // Blocaa l'evidenziazione nativa su iOS/Android
-  document.addEventListener('touchstart', function() {}, {passive: true});
+    function onTouchStart(e) {
+      // segnala che è in corso un touch
+      document.body.classList.add('is-touching');
+
+      // se il target è un badge, rimuovi il focus da altri elementi
+      const t = e.target;
+      if (t && t.matches && t.matches('.badges img')) {
+        // rimuove il focus attivo (se presente)
+        if (document.activeElement && typeof document.activeElement.blur === 'function') {
+          document.activeElement.blur();
+        }
+      }
+
+      // pulizia timer precedente
+      if (touchTimer) clearTimeout(touchTimer);
+    }
+
+    function onTouchEnd(e) {
+      const t = e.target;
+      if (t && t.matches && t.matches('.badges img') && typeof t.blur === 'function') {
+        t.blur();
+      }
+      if (document.activeElement && typeof document.activeElement.blur === 'function') {
+        document.activeElement.blur();
+      }
+
+      touchTimer = setTimeout(function() {
+        document.body.classList.remove('is-touching');
+      }, 50);
+    }
+
+    document.addEventListener('touchstart', onTouchStart, {passive: true});
+    document.addEventListener('touchend', onTouchEnd, {passive: true});
+    document.addEventListener('click', function(e){
+      if (e.target && e.target.matches && e.target.matches('.badges img')) {
+        // rimuovi focus subito
+        if (document.activeElement && typeof document.activeElement.blur === 'function') {
+          document.activeElement.blur();
+        }
+      }
+    }, true);
+  })();
 </script>
+
 
 </body>
 </html>
