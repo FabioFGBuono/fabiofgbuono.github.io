@@ -19,10 +19,14 @@
 |---|---:|---:|---|
 | Md2Arxive | OCaml | Proof-of-concept / unmaintained | Markdown → LaTeX transpiler for arXiv submissions, formal semantics & compiler pipeline. |
 | Docxwatermarker | Python | Production-tested / case study / unmaintained | Byte-preserving image replacement in .docx templates, formal specs + reproducible builds. |
+| The Circus of Fantastic Assertions | Step Right Up, Ladies and Gentlemen! | Probabilistic Stability | Formal specification for people with no time and the hidden wonders of compilation |
+| Macrobiotics of Macros | text, math and assert | Beta |  A Culinary Guide to Lisp Metaprogramming |
 | Schrödinger Recursion | Python | A compact, educational Lisp interpreter in Python that demonstrates the **Schrödinger Recursion** pattern |
 | ErrorContext | Python | Conceptual experiment in exception‑driven observability | Python stack traces tell you where things broke, ErrorContext tells you why |
 | Symmetries-Invariants-Music | text, math and music | an idea about music theory | Whole tones, fifths, and zigzag patterns |
 ---
+
+
 
 
 ## ∑ ***▸ Projects, ideas, experiments***
@@ -94,6 +98,19 @@ Features:
 
 ---
 
+
+## ***▸▸ [Il Circo Delle Asserzioni Fantastiche](https://github.com/FabioFGBuono/AssertionCircus/): Formal specification for people with no time and the hidden wonders of compilation***
+
+Did you know that assertions have side effects even when they vanish into thin air? Probably not, but fear not, this and much more awaits you.
+"Step right up, ladies and gentlemen", the grand circus of fantastic assertions is about to begin.
+
+---
+
+## ***▸▸ [Macrobiotics of Macros](https://github.com/FabioFGBuono/Macrobiotics-of-Macros): Quasiquotation and the Art of Code Assembly: A Culinary Guide to Lisp Metaprogramming***
+
+A Michelin starred presentation of the culinary masterpiece known as “Homoicinicity à la Récursiv”, a fragrant, macrobiotic dish, simple yet recursive in its very essence, like a function with no obvious base case. Delightful in its formal minimalism, it teaches you how to cook by transforming you from a mere consumer into an active creator, an architect of languages and systems.
+
+---
 
 ## ***▸▸ [Schrödinger Recursion](https://github.com/FabioFGBuono/Schrodinger-Recursion): Another Educational case study in rigorous Python engineering***
 
