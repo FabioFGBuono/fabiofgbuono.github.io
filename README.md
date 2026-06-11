@@ -21,6 +21,7 @@
 | Docxwatermarker | Python | Production-tested / case study / unmaintained | Byte-preserving image replacement in .docx templates, formal specs + reproducible builds. |
 | The Circus of Fantastic Assertions | Step Right Up, Ladies and Gentlemen! | Probabilistic Stability | Formal specification for people with no time and the hidden wonders of compilation |
 | Macrobiotics of Macros | text, math and assert | Beta |  A Culinary Guide to Lisp Metaprogramming |
+| Dieci-Atti-Unificanti | text | WORK IN PROGRESS | Un piatto storico-algoritmico tra Skolem e Montanari unificato a vapore |
 | Schrödinger Recursion | Python | A compact, educational Lisp interpreter in Python that demonstrates the **Schrödinger Recursion** pattern |
 | ErrorContext | Python | Conceptual experiment in exception‑driven observability | Python stack traces tell you where things broke, ErrorContext tells you why |
 | Symmetries-Invariants-Music | text, math and music | an idea about music theory | Whole tones, fifths, and zigzag patterns |
@@ -28,7 +29,7 @@
 
 
 
-
+https://github.com/FabioFGBuono/Dieci-Atti-Unificanti
 ## ∑ ***▸ Projects, ideas, experiments***
 
 
@@ -109,6 +110,14 @@ Did you know that assertions have side effects even when they vanish into thin a
 ## ***▸▸ [Macrobiotics of Macros](https://github.com/FabioFGBuono/Macrobiotics-of-Macros): Quasiquotation and the Art of Code Assembly: A Culinary Guide to Lisp Metaprogramming***
 
 A Michelin starred presentation of the culinary masterpiece known as “Homoicinicity à la Récursiv”, a fragrant, macrobiotic dish, simple yet recursive in its very essence, like a function with no obvious base case. Delightful in its formal minimalism, it teaches you how to cook by transforming you from a mere consumer into an active creator, an architect of languages and systems.
+
+---
+
+
+## ***▸▸ [Dieci Atti Unificanti](https://github.com/FabioFGBuono/Dieci-Atti-Unificanti): A historic–algorithmic dish between Skolem and Montanari, unified by steam.***
+
+Skolem, Herbrand and Montanari in Ten Acts, during the show you'll be able to enjoy a delicious Skolemödelöv with Unification Sauce, featuring Complexity Reduction through Systematic Elimination of Universal Variables via Instantiation with Syntactically Constructed Functions from the Surrounding Environment. Bon appetit...
+
 
 ---
 
