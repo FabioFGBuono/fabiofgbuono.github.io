@@ -73,7 +73,7 @@ A small but complete compiler pipeline showing AST, lexing, parsing, semantic va
 ---
 
 
-## ***▸▸ [Docxwatermarker](https://github.com/FabioFGBuono/Docxwatermarker): Educational case study in rigorous Python engineering***
+## ***▸▸ [Docxwatermarker](https://github.com/FabioFGBuono/docxwatermarker): Educational case study in rigorous Python engineering***
 
 
 Replace images inside .docx templates byte-for-byte, preserving layout for per-recipient document personalization (confidentiality stamps, draft markers, watermarks for traceability).
@@ -126,6 +126,20 @@ A compact, educational Lisp interpreter in Python that demonstrates the **Schrö
 
 
 ---
+
+
+
+## ***▸▸ [ErrorContext](https://github.com/FabioFGBuono/ErrorContext)***
+
+*Python stack traces tell you where things broke. errorcontext tells you why, with no external dependencies. No separate logging setup. No configuration files. The exception carries its own context. Always. Enjoy!*
+
+> ErrorContext let the exception accumulate its own context as it unwinds. The call stack is the trail. The exception is the log entry and no coordination is required. Obviously is a conceptual experiment in exception‑driven observability, it’s fully functional, but its main purpose is to explore what happens when the exception becomes the log.*
+
+
+
+
+---
+
 
 ## ***▸▸ [Symmetries-Invariants-Music](https://github.com/FabioFGBuono/Symmetries-Invariants-Music)***
 
