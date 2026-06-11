@@ -12,7 +12,7 @@
 ---
 
 
-## Key repos  
+## Key repos
 ![Issues](https://img.shields.io/badge/Issues-Open_with_care-green)
 
 | Repo | Tech | Status | One-line |
@@ -29,7 +29,6 @@
 
 
 
-https://github.com/FabioFGBuono/Dieci-Atti-Unificanti
 ## ∑ ***▸ Projects, ideas, experiments***
 
 
