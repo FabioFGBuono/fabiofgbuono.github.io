@@ -360,7 +360,49 @@ footer{
   .hr-accent--hero--strong { height: 12px; margin: 36px 0; }
 }
 
+    
+/* HR larga con ombra scura e colori del tema */
+.hr-accent--wide-dark {
+  height: 18px;
+  border: 0;
+  margin: 44px 0;
+  border-radius: 12px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--accent) 85%, black 15%) 0%,
+    var(--accent) 35%,
+    var(--accent-dark) 70%,
+    color-mix(in srgb, var(--accent-dark) 85%, black 15%) 100%
+  );
+  box-shadow:
+    0 28px 80px rgba(6,10,25,0.75),
+    0 12px 40px rgba(16,24,48,0.55),
+    inset 0 2px 0 rgba(255,255,255,0.03);
+  filter: drop-shadow(0 20px 48px rgba(6,10,25,0.7));
+  mix-blend-mode: screen;
+  opacity: 0.99;
+  will-change: transform, opacity;
+}
 
+/* Variante leggermente più sottile per layout meno pesanti */
+.hr-accent--wide-dark--medium {
+  height: 14px;
+  border-radius: 10px;
+  margin: 36px 0;
+  box-shadow:
+    0 20px 60px rgba(6,10,25,0.68),
+    0 10px 30px rgba(16,24,48,0.48),
+    inset 0 1px 0 rgba(255,255,255,0.03);
+  filter: drop-shadow(0 14px 36px rgba(6,10,25,0.66));
+}
+
+/* Responsive: riduce l'altezza su schermi piccoli come i titoli */
+@media (max-width: 768px) {
+  .hr-accent--wide-dark { height: 12px; margin: 32px 0; }
+  .hr-accent--wide-dark--medium { height: 10px; margin: 28px 0; }
+}
+
+    
   </style>
 </head>
 <body class="diag-accent">
@@ -510,13 +552,12 @@ footer{
   <h2>𝄞 ▸ A personal note</h2>
   <p>I have been playing music for as long as I can remember, I loved Walter Piston's beautiful book, and I have always thought that harmonic structures work like formal systems and if you think about it they are not that different from a language or from a model of computation. Ah... Juggling relaxes me as much as playing the guitar or unwinding with a good movie. I'm also an avid strategy game enthusiast, from Go and chess to Quarto, Othello, Connect Four, and plenty more. And I love cooking, and I've always enjoyed how often computer science borrows culinary metaphors. From classic works like Java Restaurant (Francesco Tisato, Libero Nigro, Apogeo), which explains concurrency through the workflow of a kitchen, to the global tradition of technical "Cookbooks", the parallel between recipes and algorithms always makes me smile. I also appreciate the reverse approach of books like Cooking for Programmers 0x00 (Richard Wurzer, 0x0D Press), which teach real cooking through pseudocode, flowcharts, and programming concepts, proving just how interchangeable these two worlds can be.</p>
 
-  <hr>
+  <hr class="hr-accent--wide-dark">
 
   <h2>λ ▸ My projects here on GitHub</h2>
   <p>I do not use public repositories very often but whatever is worth putting online is here and this is where you will find the things that I think deserve to be shared, even if they are small, partial, experimental or simply useful to me while I try to understand better what I am working on.</p>
 
-  <hr>
-  <p class="lead"><em><hr></em></p>
+  <hr class="hr-accent--wide-dark">
 
   <h3><a class="repo" href="https://fabiofgbuono.github.io/Md2Arxive">Md2Arxive</a> - Markdown to LaTeX Transpiler</h3>
   <p><strong>A practical bridge between compiler theory and production code.</strong></p>
@@ -531,7 +572,7 @@ footer{
   </ul>
   <p>A small but complete compiler pipeline showing AST, lexing, parsing, semantic validation, and code generation on an understandable domain.</p>
 
-  <hr>
+  <hr class="hr-accent--wide-dark">
 
   <h3><a class="repo" href="https://fabiofgbuono.github.io/docxwatermarker">Docxwatermarker</a> Educational case study in rigorous Python engineering</h3>
   <p><strong>Replace images inside .docx templates byte-for-byte, preserving layout for per-recipient document personalization</strong> (confidentiality stamps, draft markers, watermarks for traceability).</p>
@@ -552,7 +593,7 @@ footer{
     <li>Hoare logic + operational semantics + total correctness proofs</li>
   </ul>
 
-  <hr>
+  <hr class="hr-accent--wide-dark">
   
     
   <h3>
@@ -564,7 +605,7 @@ footer{
     </em>
   </p>
 
-  <hr>
+  <hr class="hr-accent--wide-dark">
    
   <h3>
     <a class="repo" href="https://fabiofgbuono.github.io/Dieci-Atti-Unificanti">Dieci atti unificanti</a></h3>
@@ -578,7 +619,7 @@ footer{
     </em>
   </p>  
   
-  <hr>
+  <hr class="hr-accent--wide-dark">
     
   <h3><a class="repo" href="https://fabiofgbuono.github.io/Macrobiotics-of-Macros">Macrobiotics of Macros</a></h3>
   <p><em>A Michelin starred presentation of the culinary masterpiece known as “Homoicinicity à la Récursiv”, 
@@ -588,7 +629,7 @@ footer{
   </em></p>
 
 
-  <hr>
+  <hr class="hr-accent--wide-dark">
   
 
   <h3><a class="repo" href="https://fabiofgbuono.github.io/Schrodinger-Recursion">Schrödinger Recursion</a></h3>
@@ -601,7 +642,7 @@ footer{
      thunking, trampolining, and interpreter design decisions, ideal for teaching or 
      experimentation.</em></p>
 
-  <hr>
+  <hr class="hr-accent--wide-dark">
 
     <h3><a class="repo" href="https://fabiofgbuono.github.io/ErrorContext">ErrorContext</a></h3>
   <p><em>Python stack traces tell you where things broke. errorcontext tells you why, with no external dependencies. N
@@ -613,7 +654,7 @@ footer{
     in exception‑driven observability, it’s fully functional, but its main purpose is to explore what 
     happens when the exception becomes the log..</blockquote>
 
-  <hr>
+  <hr class="hr-accent--wide-dark">
   
   <h3><a class="repo" href="https://fabiofgbuono.github.io/SSymmetries-Invariants-Music">Symmetries-Invariants-Music</a></h3>
   <p><em>This repository explores the hidden mathematical symmetries in Western tonal 
@@ -626,12 +667,12 @@ footer{
     wants to discover elegant structures hidden within classical music theory.
   </blockquote>
 
-  <hr>
+  <hr class="hr-accent--wide-dark">
 
   <h2>⊘ ▸ Licenses</h2>
   <p>Everything you find here is released under <strong>free</strong> licenses</p>
 
-  <hr>
+  <hr class="hr-accent--wide-dark">
 
   <h2>▸ Acknowledgements for ideas</h2>
   <p>The theoretical content, proofs, and implementation described in these files are 
@@ -646,7 +687,7 @@ footer{
     the algorithmic design, the ideas, or the scientific claims where present.</p>
   <p>This statement applies to all repositories under this account, unless otherwise indicated.</p>
 
-  <hr>
+  <hr class="hr-accent--wide-dark">
 
   <p><em>If you see something broken, open an issue.</em></p>
   <p><em>If you see something cool, steal it.</em></p>
