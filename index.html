@@ -460,6 +460,48 @@ body::after{
   }
 
 
+
+
+
+
+
+
+    
+  .table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 1rem;
+    border-radius: 6px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* evita che si schiacci troppo su mobile */
+  }
+
+  th, td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+  }
+
+  th {
+    background: #f7f7f7;
+    font-weight: bold;
+  }
+
+  td a.repo {
+    font-weight: 600;
+  }
+
+  @media (max-width: 480px) {
+    td, th {
+      padding: 6px 8px;
+      font-size: 14px;
+    }
+  }
+
   </style>
 </head>
 <body class="diag-accent">
@@ -489,6 +531,9 @@ body::after{
   <img src="https://img.shields.io/badge/Issues-Open_with_care-green" alt="Issues">
 </div>
 
+
+
+<div class="table-container">
 <table>
   <thead>
     <tr>
@@ -526,7 +571,7 @@ body::after{
       <td><a class="repo" href="https://fabiofgbuono.github.io/Dieci-Atti-Unificanti/">A historic–algorithmic dish between Skolem and Montanari</a></td>
       <td style="text-align:right;">Text</td>
       <td>Work in Progress</td>
-      <td>Ten Acts featuring Skolem, Herbrand and Montanari, served with a Skolemödelöv and Unification Sauce. Complexity reduction through systematic elimination of universal variables via syntactic instantiation.</td>
+      <td>Ten Acts featuring Skolem, Herbrand and Montanari, served with a Skolemödelöv and Unification Sauce.</td>
     </tr>
 
     <tr>
@@ -559,7 +604,7 @@ body::after{
 
   </tbody>
 </table>
-<hr>
+</div><hr>
 
 
 
