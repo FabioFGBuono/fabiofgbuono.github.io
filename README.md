@@ -26,6 +26,8 @@
 | ErrorContext | Python | Conceptual experiment in exception‑driven observability | Python stack traces tell you where things broke, ErrorContext tells you why |
 | Symmetries-Invariants-Music | text, math and music | an idea about music theory | Whole tones, fifths, and zigzag patterns |
 
+---
+
 ## Preprint and more
 ![Conceptual Hazard](https://img.shields.io/badge/Conceptual_Hazard-Think_at_your_own_risk-blueviolet)
 ![Heavy Concepts Ahead](https://img.shields.io/badge/Warning-Heavy_concepts_ahead-red)
