@@ -142,7 +142,7 @@ A compact, educational Lisp interpreter in Python that demonstrates the **Schrö
 ---
 
 
-## ***▸▸ [Curry-Howard A Recipe)](https://github.com/FabioFGBuono/Curry-Howard_A_Recipe)***
+## ***▸▸ [Curry-Howard A Recipe](https://github.com/FabioFGBuono/Curry-Howard_A_Recipe)***
 
 *hy Your Bugs Are Fallacious Theorems... and how to prepare better code*
 
