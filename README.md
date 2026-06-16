@@ -25,6 +25,8 @@
 | Schrödinger Recursion | Python | A compact, educational Lisp interpreter in Python that demonstrates the **Schrödinger Recursion** pattern |
 | Curry-Howard A Recipe | Text | Why Your Bugs Are Fallacious Theorems... and how to prepare better code |
 | ErrorContext | Python | Conceptual experiment in exception‑driven observability | Python stack traces tell you where things broke, ErrorContext tells you why |
+| Keyclick | Text |  WORK IN PROGRESS | History of Multitasking |
+| Appunti Sui Linguaggi | Text |  WORK IN PROGRESS | ... |
 | Symmetries-Invariants-Music | text, math and music | an idea about music theory | Whole tones, fifths, and zigzag patterns |
 
 ---
@@ -154,8 +156,20 @@ A compact, educational Lisp interpreter in Python that demonstrates the **Schrö
 
 > ErrorContext let the exception accumulate its own context as it unwinds. The call stack is the trail. The exception is the log entry and no coordination is required. Obviously is a conceptual experiment in exception‑driven observability, it’s fully functional, but its main purpose is to explore what happens when the exception becomes the log.*
 
+---
 
 
+
+## ***▸▸ [Keyclick](https://github.com/FabioFGBuono/Keyclick)***
+
+*History of Multitasking*
+
+---
+
+
+## ***▸▸ [Appunti Sui Linguaggi](https://github.com/FabioFGBuono/Appunti_Sui_Linguaggi)***
+
+WORK IN PROGRESS
 
 ---
 
@@ -197,12 +211,5 @@ This statement applies to all repositories under this account, unless otherwise 
 
 
 ***And if I don’t reply… I’m probably busy breaking something else.***
-
-
-
-[HTML Page Here](https://fabiofgbuono.github.io/main/index.html)
-
----
-
 
 
