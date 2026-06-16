@@ -33,9 +33,10 @@
 ![Heavy Concepts Ahead](https://img.shields.io/badge/Warning-Heavy_concepts_ahead-red)
 
 
-| Repo | DOI | Repo | More |
-|---|---:|---:|---|
-| Mixed-Radix One-Time Pad | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1234567.svg)](https://doi.org/10.5281/zenodo.20614326) | https://github.com/FabioFGBuono/Mixed_Radix_OTP | [![Full Text Here](https://img.shields.io/badge/Full_Text-Here-blue?logo=zenodo&logoColor=white)](https://zenodo.org/records/20614326) |
+| Repo | Repo | Link |
+|---|---:|---|
+| Mixed-Radix One-Time Pad | https://github.com/FabioFGBuono/Mixed_Radix_OTP | [![arXiv](https://img.shields.io/badge/arXiv-2606.16040-b31b1b?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2606.16040) |
+
 
 ---
 
